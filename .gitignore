@@ -43,3 +43,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# Sensitive project files (API keys / services)
+
+lib/firebase_options.dart
+lib/services/firestore_service.dart
+lib/services/idea_service.dart
+
+# Environment files
+.env
+*.env
