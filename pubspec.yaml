@@ -1,0 +1,52 @@
+name: idea_generator_app_v2
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  animated_text_kit: ^4.2.2
+  google_fonts: ^8.0.2
+  audioplayers: ^6.6.0
+  shared_preferences: ^2.5.4
+  provider: ^6.0.5
+  path_provider: ^2.1.2
+  
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.7.0
+  cloud_firestore: ^5.4.0
+  firebase_storage: ^12.1.0
+  
+  image_picker: ^1.2.1
+  file_picker: ^8.0.0
+  image_cropper: ^12.1.1
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/IdevioIcon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/sounds/cartoon-game-damage-alert-ni-sound-1-00-03.mp3
+    - assets/icon/IdevioIcon.png
+    - assets/icon/Idevio-192x192.png
+    - assets/icon/Idevio-512x512.png
+    - assets/icon/Idevio-maskable-192x192.png
+    - assets/icon/Idevio-maskable-512x512.png

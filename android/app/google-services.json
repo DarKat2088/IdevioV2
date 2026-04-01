@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "337888451348",
+    "project_id": "idevio-app",
+    "storage_bucket": "idevio-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337888451348:android:40d993a0d4560459f5c001",
+        "android_client_info": {
+          "package_name": "com.example.idea_generator_app_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeco-b3qMHO5IpzM_BuJh2WZmhIGXP090"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
