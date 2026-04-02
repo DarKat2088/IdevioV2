@@ -1,7 +1,6 @@
-# idea_generator_app_v2
+# Idevio
 
-A new Flutter project.
-
+AI-powered idea generator for everyday inspiration
 ## Getting Started
 
 This project is a starting point for a Flutter application.
