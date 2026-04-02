@@ -12,7 +12,7 @@ import '../utils/storage.dart';
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:share_plus/share_plus.dart';
-
+import 'package:flutter/foundation.dart';
 class IdeaGeneratorScreen extends StatefulWidget {
   final ThemeMode themeMode;
 
@@ -401,9 +401,10 @@ class _IdeaGeneratorScreenState extends State<IdeaGeneratorScreen>
                 position: _slideAnimation,
                 child: FadeTransition(
                   opacity: _fadeAnimation,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
+                  child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 10,
+                  runSpacing: 10,
                     children: [
                       IconButton(
                         icon: Icon(
@@ -412,7 +413,7 @@ class _IdeaGeneratorScreenState extends State<IdeaGeneratorScreen>
                               ? Colors.indigo[900]
                               : Colors.tealAccent,
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (currentIdea == null) return;
 
                           final idea = currentIdea!;
@@ -424,12 +425,12 @@ class _IdeaGeneratorScreenState extends State<IdeaGeneratorScreen>
                           const appLink =
                               "📲 Сгенерировано в Idevio: https://darkat2088.github.io/IdevioV2/";
 
-                          SharePlus.instance.share(
-                            ShareParams(
-                              text: "$text$appLink",
-                            ),
-                          );
-                        },
+                           final fullText = "$text$appLink";
+
+                            await SharePlus.instance.share(
+                              ShareParams(text: fullText),
+                            );
+                        },             
                       ),
                       GestureDetector(
                         onTap: () async {

@@ -56,9 +56,9 @@ class FavoritesPage extends StatelessWidget {
                       Icons.share,
                       color: isDark ? Colors.tealAccent : Colors.indigo,
                     ),
-                    onPressed: () {
-                      SharePlus.instance.share(
-                        ShareParams(
+                    onPressed: () async {
+                       await SharePlus.instance.share(
+                          ShareParams(
                           text: "🔥 Смотри идею:\n\n$idea\n\n📲 Idevio: https://darkat2088.github.io/IdevioV2/",
                         ),
                       );
