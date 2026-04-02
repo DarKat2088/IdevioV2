@@ -486,23 +486,26 @@ class _IdeaGeneratorScreenState extends State<IdeaGeneratorScreen>
                               },
                             ),
                           ),
-                          ScaleTransition(
-                            scale: _starController,
-                            child: GestureDetector(
-                              onTap: toggleFavoriteCurrentIdea,
-                              child: Icon(
-                                ideaState.favoritesIdeas.contains(currentIdea)
-                                    ? Icons.star
-                                    : Icons.star_border,
-                                color: widget.themeMode == ThemeMode.light
-                                    ? Colors.redAccent
-                                    : (ideaState.favoritesIdeas.contains(currentIdea)
-                                        ? Colors.amber
-                                        : Colors.grey[400]),
-                                size: 30,
+                          Transform.translate(
+                            offset: const Offset(-30, 0), 
+                            child: ScaleTransition(
+                              scale: _starController,
+                              child: GestureDetector(
+                                onTap: toggleFavoriteCurrentIdea,
+                                child: Icon(
+                                  ideaState.favoritesIdeas.contains(currentIdea)
+                                      ? Icons.star
+                                      : Icons.star_border,
+                                  color: widget.themeMode == ThemeMode.light
+                                      ? Colors.redAccent
+                                      : (ideaState.favoritesIdeas.contains(currentIdea)
+                                          ? Colors.amber
+                                          : Colors.grey[400]),
+                                  size: 30,
+                                ),
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ],
