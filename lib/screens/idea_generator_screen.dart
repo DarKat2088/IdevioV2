@@ -11,6 +11,7 @@ import '../controllers/idea_state.dart';
 import '../utils/storage.dart'; 
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:share_plus/share_plus.dart';
 
 class IdeaGeneratorScreen extends StatefulWidget {
   final ThemeMode themeMode;
@@ -401,9 +402,35 @@ class _IdeaGeneratorScreenState extends State<IdeaGeneratorScreen>
                 child: FadeTransition(
                   opacity: _fadeAnimation,
                   child: Row(
-                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.share,
+                          color: widget.themeMode == ThemeMode.light
+                              ? Colors.indigo[900]
+                              : Colors.tealAccent,
+                        ),
+                        onPressed: () {
+                          if (currentIdea == null) return;
+
+                          final idea = currentIdea!;
+
+                          final text = "🔥 Смотри, какая идея у меня сгенерировалась:\n\n"
+                              "$idea\n\n"
+                              "✨ Попробуй и ты!\n\n";
+
+                          const appLink =
+                              "📲 Сгенерировано в Idevio: https://darkat2088.github.io/IdevioV2/";
+
+                          SharePlus.instance.share(
+                            ShareParams(
+                              text: "$text$appLink",
+                            ),
+                          );
+                        },
+                      ),
                       GestureDetector(
                         onTap: () async {
                           if (currentIdea == null) return;

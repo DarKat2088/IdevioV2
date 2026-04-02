@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../controllers/idea_state.dart';
+import 'package:share_plus/share_plus.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({Key? key}) : super(key: key);
@@ -50,6 +51,19 @@ class FavoritesPage extends StatelessWidget {
             ),
             child: Row(
               children: [
+                 IconButton(
+                    icon: Icon(
+                      Icons.share,
+                      color: isDark ? Colors.tealAccent : Colors.indigo,
+                    ),
+                    onPressed: () {
+                      SharePlus.instance.share(
+                        ShareParams(
+                          text: "🔥 Смотри идею:\n\n$idea\n\n📲 Idevio: https://darkat2088.github.io/IdevioV2/",
+                        ),
+                      );
+                    },
+                  ),
                 Expanded(
                   child: Text(
                     idea,
